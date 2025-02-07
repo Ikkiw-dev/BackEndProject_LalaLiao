@@ -1,8 +1,10 @@
-import {building} from "../models/buildingModel"
+import * as buildings from "../models/buildingModel.js"
 
-export const buildingController = {
-    getAllbuildings : async (req,res) => {
-        const building = await Building.getAll();
-        res.json(building);
+export const getAllbuildings = async (req,res) => {
+    try{
+        const building = await buildings.Building.getAllroom();
+        res.status(200).json(building);
+    } catch (error) {
+        res.status(500).json({message : "Error building getting", error})
     }
-};
+}

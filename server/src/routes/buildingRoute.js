@@ -1,11 +1,9 @@
-const express = require("express");
-import db from "../config/database.js";
-const router = express.Router();
+import express from "express";
+import * as buildingControl from  "../controllers/buildingControllers";
+import * as buildingModels from "../models/buildingModel"
+const buildingRoute = express.Router();
 
-//api สำหรับดึงรายการอาคารทั้งหมดคับจู้
-router.get("/", async (req,res) => {
-    const [Building] = await db.promise().query(`SELECT * FROM Building`);
-    res.json(Building);
-});
+//api สำหรับดึงรายการห้องทั้งหมด
+buildingRoute.get("/getAllroom", buildingControl.getAllroom);
 
-export default router;
+export default buildingRoute;

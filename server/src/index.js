@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(cors());
 
 
-app.use("/api/bookings",bookingRoute);
+app.get("/api/bookings",bookingRoute);
 
 
 
