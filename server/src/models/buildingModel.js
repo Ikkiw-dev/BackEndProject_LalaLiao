@@ -1,8 +1,6 @@
 import db from "../config/database.js";
 
-export const Building = {
-    getAll : async () => {
-        const [Building] = await db.promise().query(`SELECT * FROM Building`);
+export const getAll = async () => {
+        const [Building] = await db.promise().query(`SELECT room FROM Building`);
         return Building;
-    }
-};
+    };

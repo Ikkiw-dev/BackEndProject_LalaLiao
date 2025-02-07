@@ -1,5 +1,5 @@
 import express from "express";
-import bookingController from "../controllers/bookingControllers.js";
+import bookingController, { getRoomSchedule } from "../controllers/bookingControllers.js";
 const bookingRoute = express.Router();
 
 bookingRoute.get("/", bookingController.getAllbooking);
