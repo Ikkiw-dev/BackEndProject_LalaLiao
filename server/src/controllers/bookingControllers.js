@@ -1,4 +1,4 @@
-import {Booking} from "../models/bookingModels.js"
+import * as Booking from "../models/bookingModels.js"
 
 const bookingController = {
     createBooking : async (req,res) => {
@@ -7,7 +7,7 @@ const bookingController = {
         res.status(200).json({bookingId, message : "Booking is Created"})
     },
     getAllbooking : async (req,res) => {
-        const booking = await Booking.getAll();
+        const booking = await Booking.Booking.getAll();
         res.json(booking);
     },
     cancelBooking: async (req, res) => {

@@ -2,8 +2,7 @@ import express from "express";
 import cors from 'cors';
 import connection from "./config/database.js";
 import bookingRoute from "./routes/bookingRoutes.js"
-import roomRoute from "./routes/roomRoute.js"
-import userRoute from "./routes/userRoute.js";
+
 import dotenv from "dotenv"
 
 dotenv.config()
@@ -16,8 +15,7 @@ app.use(cors());
 
 
 app.use("/api/bookings",bookingRoute);
-app.use("/api/rooms",roomRoute);
-app.use("/api/users",userRoute);
+
 
 
 // app.get("/api/user", async (req, res) => {

@@ -29,5 +29,6 @@ export const Booking = {
         );
         return getSCbyroom;
     }
-    
 }
+
+// export default componentscreate;
