@@ -1,11 +1,12 @@
 import express from "express";
-import * as BookingControl from  "../controllers/bookingControllers.js";
-import * as bookingModels from "../models/bookingModels.js"
+import * as bookingController from "../controllers/bookingControllers.js";
 const bookingRoute = express.Router();
 
-bookingRoute.post("/createBooking", BookingControl.createBooking);
-bookingRoute.get("/getAllbooking", BookingControl.getAllbooking);
-bookingRoute.delete("/cancelbooking", BookingControl.cancelBooking);
-bookingRoute.get("/getRoomSchedule", BookingControl.getRoomSchedule);
 
-export default bookingRoute;
+bookingRoute.post("/createBooking", bookingController.createBooking);
+bookingRoute.get("/getAllbooking", bookingController.getAllbooking);
+bookingRoute.delete("/cancelbooking/:ID", bookingController.cancelBooking);
+bookingRoute.get("/getRoomSchedule/:Building_ID", bookingController.getRoomSchedule);
+
+
+export default bookingRoute

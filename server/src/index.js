@@ -2,19 +2,21 @@ import express from "express";
 import cors from 'cors';
 import connection from "./config/database.js";
 import bookingRoute from "./routes/bookingRoutes.js"
+import buildingRoute from "./routes/buildingRoute.js"
 
 import dotenv from "dotenv"
 
 dotenv.config()
 
 const app = express();
-const port = 3999;
+const port = 3000;
 
 app.use(express.json());
 app.use(cors());
 
 
-app.get("/api/bookings",bookingRoute);
+app.use("/api/bookings",bookingRoute);
+app.use("/api/buildings",buildingRoute);
 
 
 
