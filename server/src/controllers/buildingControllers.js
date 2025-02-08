@@ -17,3 +17,12 @@ export const getFloor = async (req, res) => {
         res.status(500).json({message : "Error floor getting", error})
     }
 }
+
+export const getDetails = async (req,res) => {
+    try {
+        const details = await buildings.getDetails();
+        res.status(200).json(details);
+    } catch (error) {
+        res.status(500).json({message : "Error details getting"})
+    }
+}
