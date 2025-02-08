@@ -23,9 +23,9 @@ export const getAllbooking = async (req,res) => {
         
 export const cancelBooking = async (req,res) => {
     try {
-        const {ID} = req.params;
-            const result = await Booking.cancelBooking(ID);
-            res.json(result);
+        /*const {ID} = req.params;*/
+        const result = await Booking.cancelBooking(ID);
+        res.json(result);
     } catch(error) {
         res.status(500).json({message : "Error cancel booking", error})
     }
