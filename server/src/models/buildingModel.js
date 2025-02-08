@@ -11,6 +11,6 @@ export const getFloor = async (req,res) => {
 }
 
 export const getDetails = async (req,res) => {
-    const [details] = await db.promise().query(`SELECT DISTINCT name_floor, room FROM Building`);
+    const [details] = await db.promise().query(`SELECT * FROM Building`);
     return details;
 }

@@ -18,7 +18,8 @@ export const getAll = async () => {
 
 export const cancelBooking = async(ID) => {
         await db.promise().query(
-            `DELETE FROM Booking WHERE ID = ?;`,[ID]);
+            `DELETE FROM Booking 
+            WHERE ID = ?`,[ID]);
         return {message : "Booking Canceled"};
 }
 
