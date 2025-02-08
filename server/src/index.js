@@ -17,7 +17,15 @@ app.use(cors());
 
 app.use("/api/bookings",bookingRoute);
 app.use("/api/buildings",buildingRoute);
+app.use
 
+//Deploy Test
+app.get("/api/test", (req, res) => {
+    res.status(200).json({
+        success: true,
+        message: "Server is running smoothly! 🚀"
+    });
+});
 
 
 // app.get("/api/user", async (req, res) => {
